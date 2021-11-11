@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1><font size="35"> <center>Products</h1>
+    <div class="row">
+        {% for product in products %}
+            <div class="col-sm-4">
+            <div class="row" style="weight: 180rem;">
+                <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <center><h3 class="card-title">{{ product.name }}</h3>
+                    <font size="5"><p class="card-text">${{product.price}}</p></font>
+                    <font size="3"><p class="card-text">{{ product.stock }} {{ product.name }}s left</p></font>
+                    <a href="http://127.0.0.1:8000/admin/" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
